@@ -29,6 +29,10 @@ public class ServClass {
 	{
 		return tdao.addTrainer(t);
 	}
+	public boolean deleteTrainer(int tid) throws SQLException, ClassNotFoundException
+	{
+		return tdao.deleteTrainer(tid);
+	}
 	public List<Trainer> getAllTrainers() throws SQLException, ClassNotFoundException
 	{
 		return tdao.getAllTrainers();
@@ -65,6 +69,10 @@ public class ServClass {
 	public boolean addSME(SME sme) throws SQLException, ClassNotFoundException
 	{
 		return smedao.addSME(sme);
+	}
+	public boolean deleteSME(int smeid) throws SQLException, ClassNotFoundException
+	{
+		return smedao.deleteSME(smeid);
 	}
 	public List<SME> getAllSMEs() throws SQLException, ClassNotFoundException
 	{
