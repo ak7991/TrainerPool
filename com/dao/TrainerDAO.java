@@ -51,6 +51,22 @@ public class TrainerDAO implements ITrainerDAO{
 
 	}
 	
+	public boolean deleteTrainer(int tid) throws SQLException, ClassNotFoundException
+	{
+
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tDel);
+		ps.setInt(1,tid);
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+	}
+	
 	public List<Trainer> getAllTrainers() throws SQLException, ClassNotFoundException
 	{
 		ArrayList<Trainer> li=new ArrayList<Trainer>();
