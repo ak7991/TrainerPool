@@ -58,6 +58,25 @@ public class SkillDAO implements ISkillDAO{
 		return li;
 	}
 	
+	public List<Skill> getSkillsByCId(int cid) throws SQLException, ClassNotFoundException
+	{
+		ArrayList<Skill> li=new ArrayList<Skill>();
+		
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.sGetByCId);
+		ps.setInt(1, cid);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next())
+		{
+			int skillId=rs.getInt(1);
+			Skill p=getSkillById((skillId));
+			li.add(p);
+		}
+		
+		return li;
+	}
+	
 	public boolean deleteSkill(int sid) throws SQLException, ClassNotFoundException
 	{
 
