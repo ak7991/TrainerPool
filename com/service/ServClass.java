@@ -53,13 +53,13 @@ public class ServClass {
 	{
 		return tdao.getTrainerById(tid);
 	}
-	public List<Trainer> getTrainerBySkillId(int skillId) throws SQLException, ClassNotFoundException
+	public List<Trainer> getTrainersBySkillId(int skillId) throws SQLException, ClassNotFoundException
 	{
-		return tdao.getTrainerBySkillId(skillId);
+		return tdao.getTrainersBySkillId(skillId);
 	}
-	public List<Skill> getSkillByTId(int tid) throws ClassNotFoundException, SQLException
+	public List<Skill> getSkillsByTId(int tid) throws ClassNotFoundException, SQLException
 	{
-		return tdao.getSkillByTId(tid);
+		return tdao.getSkillsByTId(tid);
 	}
 	
 	
@@ -94,13 +94,13 @@ public class ServClass {
 	{
 		return smedao.getSMEById(smeid);
 	}
-	public List<SME> getSMEBySkillId(int skillId) throws SQLException, ClassNotFoundException
+	public List<SME> getSMEsBySkillId(int skillId) throws SQLException, ClassNotFoundException
 	{
-		return smedao.getSMEBySkillId(skillId);
+		return smedao.getSMEsBySkillId(skillId);
 	}
-	public List<Skill> getSkillBySId(int sid) throws ClassNotFoundException, SQLException
+	public List<Skill> getSkillsBySId(int sid) throws ClassNotFoundException, SQLException
 	{
-		return smedao.getSkillBySId(sid);
+		return smedao.getSkillsBySId(sid);
 	}
 	public boolean nominate(SME sme) throws SQLException, ClassNotFoundException
 	{
@@ -117,6 +117,10 @@ public class ServClass {
 	public List<Skill> getAllSkills() throws SQLException, ClassNotFoundException
 	{
 		return skdao.getAllSkills();
+	}
+	public List<Skill> getSkillsByCId(int cid) throws SQLException, ClassNotFoundException
+	{
+		return skdao.getSkillsByCId(cid);
 	}
 	public boolean deleteSkill(int sid) throws SQLException, ClassNotFoundException
 	{
