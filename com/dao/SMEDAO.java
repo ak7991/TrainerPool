@@ -50,6 +50,23 @@ public class SMEDAO implements ISMEDAO{
 
 	}
 	
+	public boolean deleteSME(int smeid) throws SQLException, ClassNotFoundException
+	{
+
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.smeDel);
+		ps.setInt(1,smeid);
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+	}
+
+	
 	public List<SME> getAllSMEs() throws SQLException, ClassNotFoundException
 	{
 		ArrayList<SME> li=new ArrayList<SME>();
