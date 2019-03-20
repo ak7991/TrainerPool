@@ -10,6 +10,7 @@ import com.bean.Skill;
 public interface ISMEDAO {
 
 	public boolean addSME(SME sme) throws SQLException, ClassNotFoundException;
+	public boolean deleteSME(int smeid) throws SQLException, ClassNotFoundException;
 	public List<SME> getAllSMEs() throws SQLException, ClassNotFoundException;
 	public boolean addSSkill(int smeid,int sid) throws SQLException, ClassNotFoundException;
 	public boolean updateSDates(int smeid,Date sd,Date ed) throws SQLException, ClassNotFoundException;
