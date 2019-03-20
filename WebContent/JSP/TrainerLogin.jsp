@@ -73,6 +73,24 @@
 .box input[type = "submit"]:hover{
 	background: #2ecc71;
 }
+.box input[type ="button"]{
+	border: 0;
+	background : none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box input[type = "button"]:hover{
+	background: #2ecc71;
+}
+	
 header{
 	background :#191919;
 	margin:0; 
@@ -122,7 +140,7 @@ header h1{
 	<input type="text" name="TrainerUsername" placeholder="Username" required="required">
 	<input type="password" name="TrainerPassword" placeholder="Password" required="required">
 	<input type="submit" name="Action" value="Login">
-	<input type="submit" name="Action" value="SignUp">
+	<input type="button" name="Action" value="SignUp">
 	<input type="hidden" name="User" value="Trainer">
 </form>
 <div class="footer">
