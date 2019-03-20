@@ -10,6 +10,7 @@ import com.bean.Trainer;
 public interface ITrainerDAO {
 	
 	public boolean addTrainer(Trainer t) throws SQLException, ClassNotFoundException;
+	public boolean deleteTrainer(int tid) throws SQLException, ClassNotFoundException;
 	public List<Trainer> getAllTrainers() throws SQLException, ClassNotFoundException;
 	public boolean addTSkill(int tid,int sid) throws SQLException, ClassNotFoundException;
 	public boolean updateTDates(int tid,Date sd,Date ed) throws SQLException, ClassNotFoundException;
