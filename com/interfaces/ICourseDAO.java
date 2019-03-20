@@ -11,6 +11,7 @@ public interface ICourseDAO {
 	public List<Course> getAllCourses() throws SQLException, ClassNotFoundException;
 	public boolean deleteCourse(int cid) throws SQLException, ClassNotFoundException;
 	public Course getCourseById(int id) throws ClassNotFoundException, SQLException;
+	public Course getCourseByCName(String cname) throws ClassNotFoundException, SQLException;
 	
 
 }

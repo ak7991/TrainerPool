@@ -13,6 +13,21 @@ public class SME {
 	
 	
 	public SME(String sFname, String sLname, int sAge, String sGender, String sContactNumber, String smail,
+			String sUsername, String sPassword, int sMEId, int sStatus) {
+		super();
+		this.sFname = sFname;
+		this.sLname = sLname;
+		this.sAge = sAge;
+		this.sGender = sGender;
+		this.sContactNumber = sContactNumber;
+		this.smail = smail;
+		this.sUsername = sUsername;
+		this.sPassword = sPassword;
+		SMEId = sMEId;
+		this.sStatus = sStatus;
+	}
+
+	public SME(String sFname, String sLname, int sAge, String sGender, String sContactNumber, String smail,
 			String sUsername, String sPassword, Date sDateOfBegin, Date sDateOfEnd, int sMEId, int sStatus) {
 		super();
 		this.sFname = sFname;

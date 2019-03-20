@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.bean.SME;
 import com.bean.Skill;
 import com.bean.Trainer;
 import com.interfaces.ICommands;
@@ -38,9 +39,40 @@ public class TrainerDAO implements ITrainerDAO{
 		ps.setString(7, t.getTmail());
 		ps.setString(8,t.gettUsername());
 		ps.setString(9,t.gettPassword());
-		ps.setDate(10,new java.sql.Date(t.gettDateOfBegin().getTime()));
-		ps.setDate(11,new java.sql.Date(t.gettDateOfEnd().getTime()));
 		ps.setInt(12,t.gettStatus());
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+
+	}
+	
+	public boolean setTDates(Date sd,Date ed) throws SQLException, ClassNotFoundException
+	{
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tSetDate);
+		ps.setDate(1,new java.sql.Date(sd.getTime()));
+		ps.setDate(2,new java.sql.Date(ed.getTime()));
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+	}
+	
+	public boolean addTSkill(int tid,int sid) throws SQLException, ClassNotFoundException
+	{
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tAddTSkill);
+		ps.setInt(1,tid);
+		ps.setInt(2,sid);
 		
 		int n=ps.executeUpdate();
 		
@@ -97,22 +129,6 @@ public class TrainerDAO implements ITrainerDAO{
 		return li;
 	}
 	
-	public boolean addTSkill(int tid,int sid) throws SQLException, ClassNotFoundException
-	{
-		Connection con=Conclass.getCon();
-		
-		PreparedStatement ps=con.prepareStatement(ICommands.tAddTSkill);
-		ps.setInt(1,tid);
-		ps.setInt(2,sid);
-		
-		int n=ps.executeUpdate();
-		
-		if(n>0)
-			return true;
-		
-		return false;
-
-	}
 	
 	public boolean updateTDates(int tid,Date sd,Date ed) throws SQLException, ClassNotFoundException
 	{
@@ -241,5 +257,32 @@ public class TrainerDAO implements ITrainerDAO{
 
 	}
 	
+	public boolean tRequest(Trainer t) throws SQLException, ClassNotFoundException
+	{
+		Connection con=Conclass.getCon();
+		int m;
+		
+		PreparedStatement ps1=con.prepareStatement(ICommands.tAddSeq);
+		ResultSet rs1=ps1.executeQuery();
+		rs1.next();
+		{
+			m=rs1.getInt(1);
+		}
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tReq);
+		//nomTab(nomid,smeid,dob,doe)
+		ps.setInt(1,m);
+		ps.setInt(2,t.getTrainerId());
+		ps.setDate(3,new java.sql.Date(t.gettDateOfBegin().getTime()));
+		ps.setDate(4,new java.sql.Date(t.gettDateOfEnd().getTime()));
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
 
+	}
+	
 }

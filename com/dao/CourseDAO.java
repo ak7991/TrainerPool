@@ -94,5 +94,26 @@ public class CourseDAO implements ICourseDAO{
 		return null;
 
 	}
+	
+	public Course getCourseByCName(String cname) throws ClassNotFoundException, SQLException
+	{
+
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.cGetByCName);
+		ps.setString(1, cname);
+		ResultSet rs=ps.executeQuery();
+		if(rs.next())
+		{
+			int courseId=rs.getInt(1);
+			String courseName=rs.getString(2);
+			Course p=new Course(courseId, courseName);
+			return p;
+		}
+		
+		return null;
+
+	}
+
 
 }

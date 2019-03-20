@@ -10,6 +10,7 @@ import com.bean.Trainer;
 public interface ITrainerDAO {
 	
 	public boolean addTrainer(Trainer t) throws SQLException, ClassNotFoundException;
+	public boolean setTDates(Date sd,Date ed) throws SQLException, ClassNotFoundException;
 	public boolean deleteTrainer(int tid) throws SQLException, ClassNotFoundException;
 	public List<Trainer> getAllTrainers() throws SQLException, ClassNotFoundException;
 	public boolean addTSkill(int tid,int sid) throws SQLException, ClassNotFoundException;
@@ -18,6 +19,7 @@ public interface ITrainerDAO {
 	public Trainer getTrainerById(int tid) throws ClassNotFoundException, SQLException;
 	public List<Trainer> getTrainersBySkillId(int skillId) throws SQLException, ClassNotFoundException;
 	public List<Skill> getSkillsByTId(int tid) throws ClassNotFoundException, SQLException;
+	public boolean tRequest(Trainer t) throws SQLException, ClassNotFoundException;
 	
 
 }

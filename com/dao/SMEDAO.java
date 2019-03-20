@@ -38,8 +38,40 @@ public class SMEDAO implements ISMEDAO{
 		ps.setString(7, sme.getSmail());
 		ps.setString(8,sme.getsUsername());
 		ps.setString(9,sme.getsPassword());
-		ps.setDate(10,new java.sql.Date(sme.getsDateOfBegin().getTime()));
-		ps.setDate(11,new java.sql.Date(sme.getsDateOfEnd().getTime()));
+		ps.setInt(10, sme.getsStatus());
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+
+	}
+	
+	public boolean setSDates(Date sd,Date ed) throws SQLException, ClassNotFoundException
+	{
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.smeSetDate);
+		ps.setDate(1,new java.sql.Date(sd.getTime()));
+		ps.setDate(2,new java.sql.Date(ed.getTime()));
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+	}
+	
+	public boolean addSSkill(int smeid,int sid) throws SQLException, ClassNotFoundException
+	{
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.smeAddSSkill);
+		ps.setInt(1,smeid);
+		ps.setInt(2,sid);
 		
 		int n=ps.executeUpdate();
 		
@@ -96,29 +128,13 @@ public class SMEDAO implements ISMEDAO{
 		return li;
 	}
 	
-	public boolean addSSkill(int smeid,int sid) throws SQLException, ClassNotFoundException
-	{
-		Connection con=Conclass.getCon();
-		
-		PreparedStatement ps=con.prepareStatement(ICommands.smeAddSSkill);
-		ps.setInt(1,smeid);
-		ps.setInt(2,sid);
-		
-		int n=ps.executeUpdate();
-		
-		if(n>0)
-			return true;
-		
-		return false;
-
-	}
 	
 	public boolean updateSDates(int smeid,Date sd,Date ed) throws SQLException, ClassNotFoundException
 	{
 
 		Connection con=Conclass.getCon();
 		
-		PreparedStatement ps=con.prepareStatement(ICommands.sUpDate);
+		PreparedStatement ps=con.prepareStatement(ICommands.smeUpDate);
 		ps.setInt(3,smeid);
 		ps.setDate(1,new java.sql.Date(sd.getTime()));
 		ps.setDate(2,new java.sql.Date(ed.getTime()));

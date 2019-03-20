@@ -13,6 +13,21 @@ public class Trainer {
 	
 	
 	public Trainer(String tFname, String tLname, int tAge, String tGender, String tContactNumber, String tmail,
+			String tUsername, String tPassword, int trainerId, int tStatus) {
+		super();
+		this.tFname = tFname;
+		this.tLname = tLname;
+		this.tAge = tAge;
+		this.tGender = tGender;
+		this.tContactNumber = tContactNumber;
+		this.tmail = tmail;
+		this.tUsername = tUsername;
+		this.tPassword = tPassword;
+		this.trainerId = trainerId;
+		this.tStatus = tStatus;
+	}
+
+	public Trainer(String tFname, String tLname, int tAge, String tGender, String tContactNumber, String tmail,
 			String tUsername, String tPassword, Date tDateOfBegin, Date tDateOfEnd, int trainerId, int tStatus) {
 		super();
 		this.tFname = tFname;

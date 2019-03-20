@@ -29,6 +29,10 @@ public class ServClass {
 	{
 		return tdao.addTrainer(t);
 	}
+	public boolean setTDates(Date sd,Date ed) throws SQLException, ClassNotFoundException
+	{
+		return tdao.setTDates(sd, ed);
+	}
 	public boolean deleteTrainer(int tid) throws SQLException, ClassNotFoundException
 	{
 		return tdao.deleteTrainer(tid);
@@ -61,7 +65,10 @@ public class ServClass {
 	{
 		return tdao.getSkillsByTId(tid);
 	}
-	
+	public boolean tRequest(Trainer t) throws SQLException, ClassNotFoundException
+	{
+		return tdao.tRequest(t);
+	}
 	
 	
 	
@@ -69,6 +76,10 @@ public class ServClass {
 	public boolean addSME(SME sme) throws SQLException, ClassNotFoundException
 	{
 		return smedao.addSME(sme);
+	}
+	public boolean setSDates(Date sd,Date ed) throws SQLException, ClassNotFoundException
+	{
+		return smedao.setSDates(sd, ed);
 	}
 	public boolean deleteSME(int smeid) throws SQLException, ClassNotFoundException
 	{
@@ -152,6 +163,9 @@ public class ServClass {
 	{
 		return cdao.getCourseById(id);
 	}
-	
+	public Course getCourseByCName(String cname) throws ClassNotFoundException, SQLException
+	{
+		return cdao.getCourseByCName(cname);
+	}
 
 }
