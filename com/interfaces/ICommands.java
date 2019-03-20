@@ -12,6 +12,7 @@ public interface ICommands {
 	String tGetById = "select * from trainerDB where tId=?";
 	String tGetBySkId="select tId from tskill where skillId=?";
 	String tGetSkByTId="select skillId from tskill where tId=?";
+	String tDel = "delete from trainerDB where tId=?";
 	
 	String smeAddSeq = "select n.nextval from dual";
 	String smeAddInsert = "insert into smeDB values(?,?,?,?,?,?,?,?,?,?,?)";
@@ -23,6 +24,7 @@ public interface ICommands {
 	String smeGetBySkId="select sId from sskill where skillId=?";
 	String smeGetSkBySId="select skillId from sskill where sId=?";
 	String smeNom="insert into nomTab values(?,?,?,?)";
+	String smeDel = "delete from smeDB where sId=?";
 	
 	String cAddSeq = "select n.nextval from dual";
 	String cAddInsert = "insert into courseDB values(?,?)";
