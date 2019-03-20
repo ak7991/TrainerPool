@@ -16,8 +16,8 @@ public interface ITrainerDAO {
 	public boolean updateTDates(int tid,Date sd,Date ed) throws SQLException, ClassNotFoundException;
 	public Trainer getTrainerByUsername(String tuname) throws ClassNotFoundException, SQLException;
 	public Trainer getTrainerById(int tid) throws ClassNotFoundException, SQLException;
-	public List<Trainer> getTrainerBySkillId(int skillId) throws SQLException, ClassNotFoundException;
-	public List<Skill> getSkillByTId(int tid) throws ClassNotFoundException, SQLException;
+	public List<Trainer> getTrainersBySkillId(int skillId) throws SQLException, ClassNotFoundException;
+	public List<Skill> getSkillsByTId(int tid) throws ClassNotFoundException, SQLException;
 	
 
 }

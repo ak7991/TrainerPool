@@ -38,6 +38,9 @@ public interface ICommands {
 	String sDel="delete from skillDB where skillId=?";
 	String sList="select * from skillDB order by skillId";
 	String sGetById ="select * from skillDB where skillId=?";
+	String sGetByCId = "select skillId from cskill where cId=?";
+	
+	
 	
 	
 	
