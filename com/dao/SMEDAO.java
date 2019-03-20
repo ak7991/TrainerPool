@@ -65,7 +65,6 @@ public class SMEDAO implements ISMEDAO{
 		
 		return false;
 	}
-
 	
 	public List<SME> getAllSMEs() throws SQLException, ClassNotFoundException
 	{
@@ -194,7 +193,7 @@ public class SMEDAO implements ISMEDAO{
 
 	}
 	
-	public List<SME> getSMEBySkillId(int skillId) throws SQLException, ClassNotFoundException
+	public List<SME> getSMEsBySkillId(int skillId) throws SQLException, ClassNotFoundException
 	{
 
 		ArrayList<SME> li=new ArrayList<SME>();
@@ -215,7 +214,7 @@ public class SMEDAO implements ISMEDAO{
 		return li;
 	}
 	
-	public List<Skill> getSkillBySId(int sid) throws ClassNotFoundException, SQLException
+	public List<Skill> getSkillsBySId(int sid) throws ClassNotFoundException, SQLException
 	{
 
 		Connection con=Conclass.getCon();

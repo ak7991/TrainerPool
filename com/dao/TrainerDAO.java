@@ -196,7 +196,7 @@ public class TrainerDAO implements ITrainerDAO{
 
 	}
 	
-	public List<Trainer> getTrainerBySkillId(int skillId) throws SQLException, ClassNotFoundException
+	public List<Trainer> getTrainersBySkillId(int skillId) throws SQLException, ClassNotFoundException
 	{
 
 		ArrayList<Trainer> li=new ArrayList<Trainer>();
@@ -218,7 +218,7 @@ public class TrainerDAO implements ITrainerDAO{
 	}
 	
 
-	public List<Skill> getSkillByTId(int tid) throws ClassNotFoundException, SQLException
+	public List<Skill> getSkillsByTId(int tid) throws ClassNotFoundException, SQLException
 	{
 
 		Connection con=Conclass.getCon();
