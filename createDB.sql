@@ -11,6 +11,13 @@ drop table skillDB;
 
 
 
+create Sequence n
+minvalue 1000
+start with 1001
+increment by 1;
+
+
+
 create table adminDB(
 Username varchar(20) not null,
 Password varchar(20) not null,
@@ -131,6 +138,10 @@ skillId  int not null,
 primary key(skillId,tId),
 foreign key(skillId)
 references skillDB(skillId));
+
+
+
+
 
 
 insert into skillDB(skillId,skillName) values (1,'C');
