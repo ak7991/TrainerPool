@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bean.Admin;
 import com.bean.SME;
 import com.bean.Trainer;
 import com.service.ServClass;

@@ -49,6 +49,10 @@ public class ServClass {
 	{
 		return tdao.updateTDates(tid, sd, ed);
 	}
+	public List<Trainer> getTrainersByDates(Date sd,Date ed) throws ClassNotFoundException, SQLException
+	{
+		return tdao.getTrainersByDates(sd, ed);
+	}
 	public Trainer getTrainerByUsername(String tuname) throws ClassNotFoundException, SQLException
 	{
 		return tdao.getTrainerByUsername(tuname);
@@ -64,6 +68,10 @@ public class ServClass {
 	public List<Skill> getSkillsByTId(int tid) throws ClassNotFoundException, SQLException
 	{
 		return tdao.getSkillsByTId(tid);
+	}
+	public boolean updateTrainer(Trainer t) throws SQLException, ClassNotFoundException
+	{
+		return tdao.updateTrainer(t);
 	}
 	public boolean tRequest(Trainer t) throws SQLException, ClassNotFoundException
 	{
@@ -112,6 +120,10 @@ public class ServClass {
 	public List<Skill> getSkillsBySId(int sid) throws ClassNotFoundException, SQLException
 	{
 		return smedao.getSkillsBySId(sid);
+	}
+	public boolean updateSME(SME sme) throws SQLException, ClassNotFoundException
+	{
+		return smedao.updateSME(sme);
 	}
 	public boolean nominate(SME sme) throws SQLException, ClassNotFoundException
 	{

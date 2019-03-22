@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.bean.SME;
 import com.bean.Skill;
 import com.bean.Trainer;
 import com.interfaces.ICommands;
@@ -148,6 +147,27 @@ public class TrainerDAO implements ITrainerDAO{
 		return false;
 	}
 	
+	public List<Trainer> getTrainersByDates(Date sd,Date ed) throws ClassNotFoundException, SQLException
+	{
+		ArrayList<Trainer> li=new ArrayList<Trainer>();
+		
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tGetByDates);
+		ps.setDate(1,new java.sql.Date(sd.getTime()));
+		ps.setDate(2,new java.sql.Date(ed.getTime()));
+		ResultSet rs=ps.executeQuery();
+		while(rs.next())
+		{
+			int tid=rs.getInt(1);
+			
+			Trainer p=getTrainerById(tid);
+			li.add(p);
+		}
+		
+		return li;
+	}
+	
 	public Trainer getTrainerByUsername(String tuname) throws ClassNotFoundException, SQLException
 	{
 
@@ -255,6 +275,35 @@ public class TrainerDAO implements ITrainerDAO{
 		
 		return li;
 
+	}
+	
+	public boolean updateTrainer(Trainer t) throws SQLException, ClassNotFoundException
+	{
+
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.tUpdate);
+		
+		ps.setString(1,t.gettFname());
+		ps.setString(2,t.gettLname());
+		ps.setInt(3,t.gettAge());
+		ps.setString(4,t.gettGender());
+		ps.setString(5,t.gettContactNumber());
+		ps.setString(6, t.getTmail());
+		ps.setString(7,t.gettUsername());
+		ps.setString(8,t.gettPassword());
+		ps.setDate(9, new java.sql.Date(t.gettDateOfBegin().getTime()) );
+		ps.setDate(10, new java.sql.Date(t.gettDateOfEnd().getTime()) );
+		ps.setInt(11,t.gettStatus());
+		
+		ps.setInt(12, t.getTrainerId());
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
 	}
 	
 	public boolean tRequest(Trainer t) throws SQLException, ClassNotFoundException

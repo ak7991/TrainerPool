@@ -19,6 +19,7 @@ public interface ISMEDAO {
 	public SME getSMEById(int smeid) throws ClassNotFoundException, SQLException;
 	public List<SME> getSMEsBySkillId(int skillId) throws SQLException, ClassNotFoundException;
 	public List<Skill> getSkillsBySId(int sid) throws ClassNotFoundException, SQLException;
+	public boolean updateSME(SME sme) throws SQLException, ClassNotFoundException;
 	public boolean nominate(SME sme) throws SQLException, ClassNotFoundException;
 	
 }

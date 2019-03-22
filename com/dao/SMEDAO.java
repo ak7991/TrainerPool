@@ -253,6 +253,35 @@ public class SMEDAO implements ISMEDAO{
 
 	}
 	
+	public boolean updateSME(SME sme) throws SQLException, ClassNotFoundException
+	{
+
+		Connection con=Conclass.getCon();
+		
+		PreparedStatement ps=con.prepareStatement(ICommands.smeUpdate);
+		
+		ps.setString(1,sme.getsFname());
+		ps.setString(2,sme.getsLname());
+		ps.setInt(3,sme.getsAge());
+		ps.setString(4,sme.getsGender());
+		ps.setString(5,sme.getsContactNumber());
+		ps.setString(6, sme.getSmail());
+		ps.setString(7,sme.getsUsername());
+		ps.setString(8,sme.getsPassword());
+		ps.setDate(9, new java.sql.Date(sme.getsDateOfBegin().getTime()) );
+		ps.setDate(10, new java.sql.Date(sme.getsDateOfEnd().getTime()) );
+		ps.setInt(11,sme.getsStatus());
+		
+		ps.setInt(12, sme.getSMEId());
+		
+		int n=ps.executeUpdate();
+		
+		if(n>0)
+			return true;
+		
+		return false;
+	}
+	
 	public boolean nominate(SME sme) throws SQLException, ClassNotFoundException
 	{
 		Connection con=Conclass.getCon();
