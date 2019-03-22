@@ -11,13 +11,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Dashboard</display-name>
-    <servlet-name>Dashboard</servlet-name>
-    <servlet-class>com.controller.Dashboard</servlet-class>
+    <display-name>Controller</display-name>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>com.controller.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Dashboard</servlet-name>
-    <url-pattern>/Dashboard</url-pattern>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/Controller</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -31,12 +31,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>LoginRedirect</display-name>
-    <servlet-name>LoginRedirect</servlet-name>
-    <servlet-class>com.controller.LoginRedirect</servlet-class>
+    <display-name>Register</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.controller.Register</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginRedirect</servlet-name>
-    <url-pattern>/LoginRedirect</url-pattern>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>FilterAllocation</display-name>
+    <servlet-name>FilterAllocation</servlet-name>
+    <servlet-class>com.controller.FilterAllocation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilterAllocation</servlet-name>
+    <url-pattern>/FilterAllocation</url-pattern>
   </servlet-mapping>
 </web-app>

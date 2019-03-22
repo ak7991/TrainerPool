@@ -19,7 +19,6 @@
 	font-family: sans-serif;
 	background: #34495e;
 }
-
 .box
 {
 	width: 300px;
