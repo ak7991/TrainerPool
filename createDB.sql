@@ -123,7 +123,6 @@ references courseDB(cId));
 create table allocationDB(
 tId int not null,
 cId int not null,
-aStatus int not null,
 aDateBegin date	not null,
 aDateEnd date not null,
 CHECK (aDateEnd>aDateBegin),
