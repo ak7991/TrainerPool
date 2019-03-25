@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Index Page</title>
+	<meta charset="ISO-8859-1">
+	
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+	    	
+	body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: #34495e;
+}
+
+header{
+	background :#191919;
+	margin:0; 
+	padding: 0;
+	width: 100%;
+	font-family: sans-serif;
+	height: 10vh;
+	background-size: cover;
+	background-position: center;
+	
+}
+
+header h1{
+	
+	color: white;
+	font-weight: 500;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	
+}
+.heading{
+	color: white;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	position:fixed;
+	font-size: 20px;
+	width: 100%;
+	color:white;
+	text-align: center;
+
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #191919 ;
+   color: white;
+   text-align: center;
+   height: 20px;
+   font-size: small;
+   font-family: sans-serif;
+   }
+  
+.admin {
+  float:left;
+  border-radius:50px;
+   height :250px ;
+  width: 250px;
+  margin-top: 150px;
+  margin-left: 50px;
+ }
+.trainer{
+  border-radius: 50px;
+  height :250px ;
+  width: 250px;
+  margin-top: 150px;
+  margin-left: 250px;
+  
+}
+.sme{
+	float:right;
+  border-radius: 190px;
+  height :250px ;
+  width: 250px;
+  margin-top: -320px;
+  margin-right: 50px;
+  }
+  .adminheading{
+  color:white;
+  font-family: sans-serif;
+  font-size: small;
+  margin-top: 400px;
+  margin-left:-170px;
+  float:left;
+  
+  }
+
+ .trainingheading{
+  color:white;
+  font-family: sans-serif;
+  font-size: small;
+  margin-top: 10px;
+  margin-left: 600px;
+  }
+  
+  .smeheading{
+  color: white;
+  font-family: sans-serif;
+  font-size: small;
+  margin-top: -53px;
+  margin-left: 1155px;
+  
+  }
+
+</style>
+</head>
+<body>
+<header>
+		<div class="main">
+			<h1 align="center">eTrainer Pool Management</h1>
+		</div>
+</header>
+
+<div class="heading">
+	<h1>LOGIN</h1>
+</div>
+
+
+	<a href="../JSP/AdminLogin.jsp"><img src="../image/admin.png"  alt="admin" class="admin"></a>
+   
+	<div class="adminheading">
+		<h2>ADMIN</h2>
+	</div>
+
+
+	<a href="../JSP/TrainerLogin.jsp"><img class = "trainer" src="../image/trainer.png"  alt="trainer"></a>
+	<div class="trainingheading">
+		<h2>TRAINER</h2>
+	</div>
+
+
+
+	<a href="../JSP/SMELogin.jsp"><img src="../image/sme.png" alt="sme" class="sme"></a>
+	<div class="smeheading">
+		<h2 align="left">SME</h2>
+	</div>
+<div class="footer">
+  		<p>Copyright wali line</p>
+</div>
+
+
+</body>
+</html>
