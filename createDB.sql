@@ -38,11 +38,11 @@ tContactNo varchar(13) not null,
 tMail varchar(15) not null,
 Username varchar(20) not null unique,
 Password varchar(20) not null,
-tDateBegin date	not null,
+tDateBegin date not null,
 tDateEnd date not null,
 CHECK (tDateEnd>tDateBegin),
 tstatus int not null,
-primary key(tId,tDateBegin,tDateEnd)
+primary key(tId)
 );
 
 
@@ -58,7 +58,7 @@ sContactNo varchar(13) not null,
 sMail varchar(15) not null,
 Username varchar(20) not null unique,
 Password varchar(20) not null,
-sDateBegin date	not null,
+sDateBegin date not null,
 sDateEnd date not null,
 CHECK (sDateEnd>sDateBegin),
 sstatus int not null,
@@ -82,7 +82,7 @@ create table courseDB(
 cId int not null,
 cName varchar(20) not null,
 cDateBegin date	not null,
-cDateEnd date not null,
+cDateEnd date,
 primary key(cId));
 
 	
@@ -175,12 +175,10 @@ insert into sskill(sId ,skillId) values(1,2);
 insert into sskill(sId ,skillId) values(1,3);
 
 insert into tskill(tId ,skillId) values(1,1);
-
+insert into tskill(tId ,skillId) values(1,2);
 insert into tskill(tId ,skillId) values(1,3);
 		   
 insert into cskill(cId ,skillId) values(1,2);
-
-insert into cskill(cId ,skillId) values(1,3);
 
 
 insert into allocationDB(tId,cId,aDateBegin,aDateEnd) values(1,1,to_date('01/08/1999','MM/dd/yyyy'),to_date('01/18/2002','MM/dd/yyyy'));
