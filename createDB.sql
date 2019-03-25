@@ -55,7 +55,7 @@ sLastName varchar(20) not null,
 sAge int not null,
 sGender varchar(10) not null,
 sContactNo varchar(13) not null,
-tMail varchar(15) not null,
+sMail varchar(15) not null,
 Username varchar(20) not null unique,
 Password varchar(20) not null,
 sDateBegin date	not null,
@@ -165,7 +165,7 @@ insert into tskill(tId ,skillId) values(1,3);
 insert into cskill(cId ,skillId) values(1,2);
 insert into cskill(cId ,skillId) values(1,3);
 	
-insert into allocationDB(tId,cId,aDateBegin,aDateEnd) values(1,1,to_date('01/08/1999','MM/dd/yyyy'),to_date('18/08/2002','MM/dd/yyyy'));														 in
+insert into allocationDB(tId,cId,aDateBegin,aDateEnd) values(1,1,to_date('01/08/1999','MM/dd/yyyy'),to_date('18/08/2002','MM/dd/yyyy'));														 
 														  
 @@getPassHash
 /
